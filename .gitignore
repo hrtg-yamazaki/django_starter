@@ -10,3 +10,6 @@ local_settings.py
 
 # lint関係
 .vscode/
+
+# DBのマウントデータ
+mysql/data/
