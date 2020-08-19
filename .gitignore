@@ -1,3 +1,12 @@
+# Pythonのキャッシュ
 __pycache__/
 
+# 仮想環境
 .venv/
+
+# 環境変数等
+.env
+local_settings.py
+
+# lint関係
+.vscode/
