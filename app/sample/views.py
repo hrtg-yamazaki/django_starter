@@ -1,6 +1,13 @@
-from django.http import HttpResponse
+from django.template.response import TemplateResponse
 from django.shortcuts import render
 
 
 def hello(request):
-    return HttpResponse("Hello, Django!")
+
+    message = "Hello, world!"
+
+    return TemplateResponse(
+        request, "hello.html", {
+            "message": message
+        }
+    )

@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'sass_processor',
+
     "app.sample",
 ]
 
@@ -56,7 +58,7 @@ ROOT_URLCONF = 'config.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -124,4 +126,11 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
+SASS_PROCESSOR_ROOT = os.path.join(BASE_DIR, 'static')
+SASS_PROCESSOR_INCLUDE_FILE_PATTERN = r'^.+\.(scss)$'
+SASS_PRECISION = 8
+SASS_OUTPUT_STYLE = 'compressed'
+SASS_TEMPLATE_EXTS = ['.html']

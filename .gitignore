@@ -13,3 +13,7 @@ local_settings.py
 
 # DBのマウントデータ
 mysql/data/
+
+# コンパイル後のcssファイル関連
+*.css
+*.css.map
