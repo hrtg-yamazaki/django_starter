@@ -4,7 +4,7 @@ from django.shortcuts import render
 
 def hello(request):
 
-    message = "Hello, world!"
+    message = "Hello, Django!"
 
     return TemplateResponse(
         request, "hello.html", {

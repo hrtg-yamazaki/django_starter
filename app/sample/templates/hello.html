@@ -11,6 +11,17 @@
 
 {% block content %}
 
-    <h1 class="hello">{{ message }}</h1>
+    <div class="hello">
+        <h1>{{ message }}</h1>
+    </div>
 
+    <div id="js-message">
+        <vue></vue>
+    </div>
+
+{% endblock %}
+
+
+{% block script %}
+    <script type="text/javascript" src="{% static 'js/sample/sample.js' %}"></script>
 {% endblock %}
