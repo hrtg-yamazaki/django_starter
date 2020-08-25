@@ -40,3 +40,15 @@ DB_NAME = "***********"
 DB_USER = "***********"
 DB_PASSWORD = "*********"
 ```
+
+
+#### 開発サーバーの実行
+```
+$ docker-compose up
+```
+#### 開発作業 ( manage.py 関連コマンドの実行 )  
+```
+$ docker-compose run web python manage.py [...]
+```
+そのままのディレクトリ構成で開発を続けたい場合は、  
+`startapp`実行前に`app/startapp.md`を参照。
