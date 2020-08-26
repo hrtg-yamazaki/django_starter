@@ -23,7 +23,7 @@ docker-composeを利用して、環境構築作業を簡略化しています。
 ## 利用方法
 
 #### 事前準備  
-- `~/django_starter/.env`の作成  
+- `./.env`の作成  
 `DB_NAME`, `DB_USER`, `DB_PASSWORD`, `DB_ROOT_PASSWORD`を定義
 ```
 DB_NAME=********
@@ -31,7 +31,7 @@ DB_USER=********
 DB_PASSWORD=********
 DB_ROOT_PASSWORD=********
 ```
-- `~/django_starter/config/local_settings.py`の作成  
+- `./config/local_settings.py`の作成  
 `SECRET_KEY_LS`( Djangoプロジェクトのシークレットキー )を自分で定義し、  
 `.env`と同内容の`DB_NAME`, `DB_USER`, `DB_PASSWORD`を記述
 ```Python
