@@ -17,3 +17,6 @@ mysql/data/
 # コンパイル後のcssファイル関連
 *.css
 *.css.map
+
+# 記事草稿
+.article/

@@ -1,18 +1,14 @@
 import os
-from pathlib import Path
-
-
-os.chdir(Path(__file__).parent)
-
-
 import MySQLdb
 from time import sleep
+from pathlib import Path
+
+os.chdir(Path(__file__).parent)
 from local_settings import DB_NAME, DB_USER, DB_PASSWORD
 
 
-# どれくらい値は必要に応じて調整
 count_to_try = 0
-LIMIT_OF_COUNT = 20
+LIMIT_OF_COUNT = 20  # 値は必要に応じて調整
 
 
 def check_connection(count, limit):
@@ -27,7 +23,6 @@ def check_connection(count, limit):
     「db」の立ち上げまでの待機時間が足りない場合は、
     LIMIT_OF_COUNTの値(接続を試行する回数の上限)を調整して実行。
     """
-
     try:
         conn = MySQLdb.connect(
             unix_socket = "/var/run/mysqld/mysqld.sock",
@@ -41,7 +36,7 @@ def check_connection(count, limit):
         count += 1
         print("Waiting for MySQL... (", count, "/ 20 )")
         sleep(3)
-        if count < 20:
+        if count < limit:
             check_connection(count, limit)
         else:
             print(e)
@@ -53,5 +48,4 @@ def check_connection(count, limit):
 
 
 if __name__ == "__main__":
-
     check_connection(count_to_try, LIMIT_OF_COUNT)
