@@ -45,11 +45,12 @@ DB_USER = "***********"
 DB_PASSWORD = "*********"
 ```
 
-
 #### 開発サーバーの実行
 ```
 $ docker-compose up
 ```
+動作確認は `localhost:8000`か`127.0.0.1:8000`から行います。  
+  
 #### 開発作業 ( manage.py 関連コマンドの実行 )  
 ```
 $ docker-compose run web python manage.py [...]
